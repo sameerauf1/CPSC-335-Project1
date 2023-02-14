@@ -7,33 +7,38 @@
 def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
     number_of_cities = len(city_distances)
     # print(number_of_cities)
-   # my_dict = defaultdict(int)
-    my_dict = {}
-    fuel_remaining = 0
+    my_dict = {}  # will store city index : fuels left over
+    fuel_left_over = 0
     for i in range(number_of_cities):  # for every starting city in city_distances
-        #starting_fuel = fuel_at_gas_station[i]
         #print(" **** We are looking at city ******* ", i, )
-        fuel_left_over = 0
-        for j in range(i, i + number_of_cities):  # we will go on a round trip
-            if j > number_of_cities-1:  # if we are out of bounds, then reset
+        # we will need to keep track of fuel_left_over for every city in a round trip
+        fuel_left_over += 0
+        # we will go on a round trip, starting from city i
+        for j in range(i, i + number_of_cities):
+            if j > number_of_cities-1:  # if we are out of bounds index, then reset to numbers 0 to number_of_cities
                 spot = j % number_of_cities
                 #print("j is greater, the new index is ", spot)
             else:
                 spot = j
+            # number of miles that can be travveled from gas fill
             miles_of_gas_filled = car_mpg * fuel_at_gas_station[spot]
-            miles_to_travel = city_distances[spot]
+            miles_to_travel = city_distances[spot]  # number of miles to travel
+            # number of miles still left with remaining gas
             fuel_left_over = miles_of_gas_filled - miles_to_travel
             #print(" now looking at from city,", spot, " to city ", spot + 1)
             if fuel_left_over >= 0:
                 my_dict[spot] = fuel_left_over
-            else:
+            else:  # if fuel is ever negative, then we couldn't do a round trip, so exit this starting city
                 #print("ah we coudn't make it!! we were down", fuel_left_over)
-                my_dict[spot] = fuel_left_over
+                # my_dict[spot] = fuel_left_over # not necessar we don't add net negative data points
                 break
     max_key = 0
-    for key_value in my_dict:  # city number_INDEX: gallons
+    for key_value in my_dict:  # city number_INDEX: gallons, loop through gallons too see max
         #print(key_value, my_dict[key_value])
         #print(key_value, my_dict.get(key_value))
+       # print("the key value or gallons: ", key_value)
+        # print(" the my_dict[key_value", my_dict[key_value])  # the miles
+        #print(" the my_dict[max_key", my_dict[max_key])
         if my_dict[key_value] > my_dict[max_key]:
             max_key = key_value
     print("city", max_key + 1, " at index: ", max_key,
