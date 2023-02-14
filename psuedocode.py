@@ -10,4 +10,4 @@
 #  calculate fuel left over by subtracting miles_of_gas_filled - miles_to_travel
 # if fuel left over is ever negative, break out of nested loop
 # if fuel is greater than or equal to 0, add starting city and fuels_left_over
-# loop through dictioanry and find max miles left and return key value
+# loop through dictioanry and find max miles left (VALUE) and return key for that value
