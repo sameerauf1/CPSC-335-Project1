@@ -12,18 +12,19 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
         # we will go on a round trip, starting from city i
         for j in range(i, i + number_of_cities):
             if j > number_of_cities-1:  # if we are out of bounds index, then reset to numbers 0 to number_of_cities
-                spot = j % number_of_cities
+                myindex = j % number_of_cities
             else:
-                spot = j
+                myindex = j
             # number of miles that can be travveled from gas fill
-            miles_of_gas_filled = car_mpg * fuel_at_gas_station[spot]
+            miles_of_gas_filled = car_mpg * fuel_at_gas_station[myindex]
 
-            miles_to_travel = city_distances[spot]  # number of miles to travel
+            # number of miles to travel
+            miles_to_travel = city_distances[myindex]
             # number of miles still left with remaining gas
             fuel_left_over = miles_of_gas_filled - miles_to_travel
 
             if fuel_left_over >= 0:
-                my_dict[spot] = fuel_left_over
+                my_dict[myindex] = fuel_left_over
             else:  # if fuel is ever negative, then we couldn't do a round trip, so exit this starting city
                 break
     max_key = 0
