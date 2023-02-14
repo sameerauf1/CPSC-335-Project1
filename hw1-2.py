@@ -1,13 +1,14 @@
 #city_distances = [5,25, 15, 10, 15]
 # fuel [1,2,1,0,3]
 # mpg 10
-from collections import defaultdict
+#from collections import defaultdict
 
 
 def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
     number_of_cities = len(city_distances)
     # print(number_of_cities)
-    my_dict = defaultdict(int)
+   # my_dict = defaultdict(int)
+    my_dict = {}
     fuel_remaining = 0
     for i in range(number_of_cities):  # for every starting city in city_distances
         #starting_fuel = fuel_at_gas_station[i]
