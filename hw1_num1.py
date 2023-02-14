@@ -8,7 +8,7 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
     fuel_left_over = 0
     for i in range(number_of_cities):  # for every starting city in city_distances
         # we will need to keep track of fuel_left_over for every city in a round trip
-        fuel_left_over += 0
+        fuel_left_over = 0
         # we will go on a round trip, starting from city i
         for j in range(i, i + number_of_cities):
             if j > number_of_cities-1:  # if we are out of bounds index, then reset to numbers 0 to number_of_cities
