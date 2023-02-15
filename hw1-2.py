@@ -17,7 +17,6 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
         for j in range(i, i + number_of_cities):
             if j > number_of_cities-1:  # if we are out of bounds index, then reset to numbers 0 to number_of_cities
                 spot = j % number_of_cities
-                #print("j is greater, the new index is ", spot)
             else:
                 spot = j
             # number of miles that can be travveled from gas fill

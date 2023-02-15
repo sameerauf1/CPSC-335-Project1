@@ -16,7 +16,7 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
             else:
                 myindex = j
             # number of miles that can be travveled from gas fill
-            miles_of_gas_filled = car_mpg * fuel_at_gas_station[myindex]
+            miles_of_gas_filled = car_mpg * fuel_at_gas_station[myindex] 
 
             # number of miles to travel
             miles_to_travel = city_distances[myindex]
@@ -26,13 +26,15 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
             if fuel_left_over >= 0:
                 my_dict[myindex] = fuel_left_over
             else:  # if fuel is ever negative, then we couldn't do a round trip, so exit this starting city
+                fuel_left_over = 0  # reset fuel_left over for next round trip
                 break
     max_key = 0
-    for key_value in my_dict:  # city number_INDEX: gallons, loop through gallons too see max
-        if my_dict[key_value] > my_dict[max_key]:
-            max_key = key_value
-    print("city", max_key , " at index: ", max_key,
-          " has left over: ", my_dict.get(max_key))
+    # for key_value in my_dict:  # city number_INDEX: gallons, loop through gallons too see max
+    #    if my_dict[key_value] > my_dict[max_key]:
+    #       max_key = key_value
+    #print("city", max_key , " at index: ", max_key," has left over: ", my_dict.get(max_key))
+    print(my_dict.keys(), "my dict keys")
+    print(my_dict.values(), "my dict values")
     return max_key
 
 
