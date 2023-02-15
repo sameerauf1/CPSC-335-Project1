@@ -31,7 +31,7 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
     for key_value in my_dict:  # city number_INDEX: gallons, loop through gallons too see max
         if my_dict[key_value] > my_dict[max_key]:
             max_key = key_value
-    print("city", max_key + 1, " at index: ", max_key,
+    print("city", max_key , " at index: ", max_key,
           " has left over: ", my_dict.get(max_key))
     return max_key
 
