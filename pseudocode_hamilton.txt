@@ -11,8 +11,7 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
             if fuel_left_over >=0 and  city == round_trip_starting_destination + number_of_cities:
                 if city == 0 and round_trip_starting_destination == 0(EDGE CASE)
                     skip iteration
-                store index of starting city in bestCity
+                store index of round_trip_starting_destination in bestCity
             if fuel_left_over < 0:
                 break out of round trip loop and move onto next starting city_distances
     return bestCity
-
