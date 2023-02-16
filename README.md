@@ -4,7 +4,7 @@
 
 * To run the algorithm, make sure you have Python installed on your computer. You can download Python at https://www.python.org/downloads/.
 
-* To run Python on VSCode, follow these steps:
+# To run Python on VSCode, follow these steps:
 
 * Open VSCode
 * Open a new file
