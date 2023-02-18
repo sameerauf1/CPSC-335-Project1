@@ -1,3 +1,6 @@
+#Project 1, Algorithm 1:
+#Names: Samee Rauf, Victoria Parry
+#CSUF-supplied email address: srauf@csu.fullerton.edu, 
 city_distances = [5, 25, 15, 10, 15]
 fuel = [1, 2, 1, 0, 3]
 car_mpg = 10

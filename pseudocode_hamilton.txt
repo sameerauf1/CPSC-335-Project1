@@ -4,7 +4,7 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
     for round_trip_starting_destination in city_distances 
         fuel_left_over = 0
         for city in range(round_trip_starting_destination , round_trip_starting_destination + number_of_cities)
-            if city > len(city_distances):
+            if city > len(city_distances-1):
                 city = city % len(city_distances)
             calculate gallons_filled_at_gas_station by accessing fuel_at_gas_station list
             calculate total_gallons_in_tank by adding fuel_at_gas_station + fuel_left_over
