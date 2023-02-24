@@ -6,6 +6,7 @@
 
 # To run Python on VSCode, follow these steps:
 
+* To run the algorithm, make sure you have Python installed on your computer. You can download Python at https://www.python.org/downloads/.
 * Open VSCode
 * Open the hamilton.py file in VSCode
 * Open the terminal in VSCode by clicking on Terminal -> New Terminal in the menu bar
