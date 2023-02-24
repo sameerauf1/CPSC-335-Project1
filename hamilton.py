@@ -18,7 +18,7 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
         fuel_left_over = 0
         # looping through every city in a round trip from each starting city
         for j in range(i, i + number_of_cities):
-            # if we are out of bounds index, then reset to numbers 0 to number_of_cities
+            # if we are out of bounds index, then reset index to numbers from 0 to number_of_cities
             if j > number_of_cities-1:
                 myindex = j % number_of_cities
             else:
@@ -33,7 +33,7 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
             fuel_left_over = total_gallons - gallons_needed_to_travel
             # if our fuel is greater than or equal to 0 and we are at the last stop before our original city record city index
             if fuel_left_over >= 0 and myindex == i:
-                if i == 0 and j == 0:  # edge case of first starting city and first trip in round trip
+                if i == 0 and j == 0:  # edge case of first starting city and first trip in round trip, must ignore
                     continue
                 # record index of bestCity with fuel>0
                 bestCity = myindex
