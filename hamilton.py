@@ -12,7 +12,7 @@ def myhamilton(city_distances, fuel_at_gas_station, car_mpg):
     number_of_cities = len(city_distances)
     # will store index of best city to start trip with, initializing with city 0
     bestCity = 0
-    # looping through each starting city
+    # looping through each starting city (round trips)
     for i in range(number_of_cities):
         # for each round trip, we need to reset left over fuel to zero
         fuel_left_over = 0
