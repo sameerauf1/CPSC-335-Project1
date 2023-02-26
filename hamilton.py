@@ -1,6 +1,6 @@
 # Project 1, Algorithm 1:
 # Names: Samee Rauf, Victoria Parry
-# CSUF-supplied email address: srauf@csu.fullerton.edu,
+# CSUF-supplied email address: srauf@csu.fullerton.edu, vjparry414@csu.fullerton.edu
 
 # Input data for algorithm:
 city_distances = [5, 25, 15, 10, 15]
