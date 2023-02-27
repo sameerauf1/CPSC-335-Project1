@@ -24,8 +24,13 @@ def PossibleMeetings(person1_Schedule, person1_DailyAct, person2_Schedule, perso
 
    combined_array = int_Sched_1 + int_Sched_2
    
-   # sorts new array
-   combined_array.sort()
+   # sorts new array using selection sort
+   for i in range(len(combined_array)):
+      minIndex = i
+      for j in range(minIndex+1,len(combined_array)):
+         if combined_array[j] < combined_array[minIndex]:
+            minIndex = j
+      (combined_array[i], combined_array[minIndex]) = (combined_array[minIndex], combined_array[i])
    # print(combined_array)
 
    # finds limiting start and end time from daily acts
@@ -36,11 +41,11 @@ def PossibleMeetings(person1_Schedule, person1_DailyAct, person2_Schedule, perso
    available_times = []
    j = 1
    for i in range(len(combined_array) - 1):
-
+      # checks the difference of endtime and start time of subsequent schedule items
+      
       diff = combined_array[j][0] - combined_array[i][1]
 
-      # double check the and part
-      if diff > 0 and combined_array[i][1] > startTime:
+      if diff > 0 and combined_array[i][1] >= startTime:
          if (combined_array[j][0] - combined_array[i][1]):
             available_times.append([combined_array[i][1], combined_array[j][0]])
       j += 1
@@ -65,10 +70,6 @@ def PossibleMeetings(person1_Schedule, person1_DailyAct, person2_Schedule, perso
 
    finalArray = [[a[:-2] + ":" + a[-2:], b[:-2] + ":" + b[-2:]] for a, b in available_times]
 
-   # finalArray = []
-   # for i in range(len(available_times)):
-   #    finalArray.append([available_times[i][0][:-2] + ":" + available_times[i][0][-2:], available_times[i][1][:-2] + ":" + available_times[i][1][-2:]])
-
    # print(finalArray)
    return finalArray
 
@@ -77,7 +78,7 @@ p1_S = [['7:00','8:30'], ['12:00','13:00'], ['16:00','18:00'] ]
 p1_D = ['9:00','19:00']
 
 p2_S = [['9:00','10:30'], ['12:20','14:30'], ['14:00','15:00'], ['16:00', '17:00'] ]
-p2_D = ['10:00','18:30']
+p2_D = ['9:00','18:30']
 
 duration = 30
 
